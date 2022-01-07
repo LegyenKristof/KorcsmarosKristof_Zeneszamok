@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Song;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('zeneszamok');
+    $songs = Song::orderBy('title')->get();
+    return view('zeneszamok', ["songs" => $songs]);
 });
