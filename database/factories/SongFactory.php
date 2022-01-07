@@ -16,7 +16,7 @@ class SongFactory extends Factory
         return [
             'title' => $this->faker->words(3, true),
             'singer' => $this->faker->name(),
-            'length' => $this->faker->numberBetween(1, 600)
+            'length' => $this->faker->numberBetween(30, 600)
         ];
     }
 }
